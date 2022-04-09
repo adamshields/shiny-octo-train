@@ -1,4 +1,12 @@
+Branch 0001
 Single Line Install for all Packages
 npm install --save @angular/material @angular/cdk material-icons bootstrap font-awesome
 
+
+Branch 0002
+Scaffold Layout Module
+Header
+Navbar 
+Barrel Layout
+Add to app.module
 
