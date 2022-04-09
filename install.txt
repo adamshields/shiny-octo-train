@@ -1,0 +1,4 @@
+Single Line Install for all Packages
+npm install --save @angular/material @angular/cdk material-icons bootstrap font-awesome
+
+
