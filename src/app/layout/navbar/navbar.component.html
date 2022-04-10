@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My App</span>
+    <span style="flex: 1 1 auto"></span>
+    <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">Dark mode</mat-slide-toggle>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="main-container" autosize>
+<h1>{{isDarkMode}}</h1>
+</mat-drawer-container>
