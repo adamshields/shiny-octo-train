@@ -13,3 +13,7 @@ Add to app.module
 Branch 0003
 configured service for theme switcher 
 have output isDarkMode value showing up on home page
+
+Branch 0004
+make it easier to reference path import variables
+"paths": { "@/*": ["src/app/*"] },
