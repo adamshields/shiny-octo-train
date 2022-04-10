@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
     this.themeService.isDarkMode()
   }
 
