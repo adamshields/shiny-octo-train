@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HeaderComponent,
     NavbarComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
@@ -30,7 +32,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent
   ]
 })
 export class LayoutModule { }
