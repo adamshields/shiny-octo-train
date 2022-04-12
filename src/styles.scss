@@ -7,6 +7,8 @@
 @import "~@angular/material/theming";
 @include mat-core();
 
+
+
 $mat-primary-scheme: (
   100: #c5cae9,
   500: #61699a,
@@ -52,4 +54,18 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page-content {
+  min-height: 93vh;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+
+}
+.full-page {
+  min-height: 93vh;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
