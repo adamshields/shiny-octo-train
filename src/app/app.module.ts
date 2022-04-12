@@ -4,19 +4,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutModule } from './layout/layout.module';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { LayoutModule } from './core/modules/layout/layout.module';
+import { MaterialModule } from './shared/modules/material/material.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MaterialModule,
     LayoutModule,
-    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
