@@ -1,11 +1,29 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="secondary-toolbar">
   <mat-toolbar-row>
-    <span>My App</span>
+    <span class="logo">My App</span>
+    <mat-icon>bolt</mat-icon>
     <span style="flex: 1 1 auto"></span>
     <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode"></mat-slide-toggle>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<!-- <mat-drawer-container class="main-container" autosize>
-<h1>{{isDarkMode}}</h1>
-</mat-drawer-container> -->
+<div class="topnav">
+  <a href="#">Portfolio</a>
+  <a href="#">Applications</a>
+  <a href="#">Projects</a>
+  <a href="#">Estimates</a>
+  <a [matMenuTriggerFor] = "menu" >Admin</a>
+  <mat-menu #menu="matMenu">
+      <a href="#"><button mat-menu-item>User</button></a>
+      <a href="#"><button mat-menu-item>Roles</button></a>
+      <a href="#"><button mat-menu-item>Hosting</button></a>
+      <a href="#"><button mat-menu-item>System Lookup</button></a>
+  </mat-menu>
+
+  <div class="search-container">
+      <form>
+          <input type="text">
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</div>
