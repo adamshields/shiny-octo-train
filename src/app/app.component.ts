@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'amped';
+  
+  title = 'WAMPED';
+
+  environmentName = '';
+  environmentUrl = 'Debug API'
+
+  constructor() {
+    
+    console.log(environment.production); // Logs false for default environment
+    // this.environmentName = environment.environmentName;
+    // this.environmentUrl = environment.apiUrl; 
+  }
+
 }
