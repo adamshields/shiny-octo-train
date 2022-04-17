@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { DataService } from './shared/services/data.service';
 import { AddHeaderInterceptor } from './core/add-header.interceptor';
 import { LogResponseInterceptor } from './core/log-response.interceptor';
+import { CacheInterceptor } from './core/cache.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { LogResponseInterceptor } from './core/log-response.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })

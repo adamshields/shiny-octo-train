@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpContext } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { CONTENT_TYPE } from '@/core/add-header.interceptor';
+import { CACHEABLE } from '@/core/cache.interceptor';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     console.log('Getting all products from the server.');
     return this.http.get<Product[]>('api/products/', {
-      context: new HttpContext().set(CONTENT_TYPE, 'application/xml')
+      context: new HttpContext().set(CACHEABLE, false)
     }).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
