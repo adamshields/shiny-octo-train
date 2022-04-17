@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +10,8 @@ import { LayoutModule } from './core/modules/layout/layout.module';
 import { ProductsModule } from './products/products.module';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { DataService } from './shared/services/data.service';
-
+import { AddHeaderInterceptor } from './core/add-header.interceptor';
+import { LogResponseInterceptor } from './core/log-response.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { DataService } from './shared/services/data.service';
     HttpClientInMemoryWebApiModule.forRoot(DataService),
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

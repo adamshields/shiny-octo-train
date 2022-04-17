@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpContext } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { CONTENT_TYPE } from '@/core/add-header.interceptor';
 
 
 @Injectable({
@@ -15,7 +16,10 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl).pipe(
+    console.log('Getting all products from the server.');
+    return this.http.get<Product[]>('api/products/', {
+      context: new HttpContext().set(CONTENT_TYPE, 'application/xml')
+    }).pipe(
       retry(2),
       catchError((error: HttpErrorResponse) => {
         console.error(error);
