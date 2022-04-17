@@ -15,6 +15,17 @@ export class ProductService {
   
   constructor(private http: HttpClient) { }
 
+  // getProducts(): Observable<Product[]> {
+  //   console.log('Getting all products from the server.');
+  //   return this.http.get<Product[]>(this.productsUrl).pipe(
+  //     retry(2),
+  //     catchError((error: HttpErrorResponse) => {
+  //       console.error(error);
+  //       return throwError(error);
+  //     })
+  //   );
+  // }
+
   getProducts(): Observable<Product[]> {
     console.log('Getting all products from the server.');
     return this.http.get<Product[]>('api/products/', {
@@ -27,6 +38,7 @@ export class ProductService {
       })
     );
   }
+
 
   createProduct(product: Product): Observable<Product> {
     product.id = null;
