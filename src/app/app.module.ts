@@ -13,10 +13,12 @@ import { DataService } from './shared/services/data.service';
 import { AddHeaderInterceptor } from './core/add-header.interceptor';
 import { LogResponseInterceptor } from './core/log-response.interceptor';
 import { CacheInterceptor } from './core/cache.interceptor';
+import { SfGridComponent } from './sf-grid/sf-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SfGridComponent,
 
   ],
   imports: [
